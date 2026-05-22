@@ -121,18 +121,22 @@
     }
   });
 
-  // --- NATIVE DATE INPUT STYLING & VALIDATION LOGIC ---
+  // --- STRICT NATIVE DATE VALIDATION ---
   const checkInInput = document.getElementById('checkInDate') as HTMLInputElement;
   const checkOutInput = document.getElementById('checkOutDate') as HTMLInputElement;
   const dateInputs = [checkInInput, checkOutInput];
   
-  // 1. Prevent past dates: Get today's date in local YYYY-MM-DD format
-  const today = new Date();
-  const offset = today.getTimezoneOffset() * 60000;
-  const localISOTime = (new Date(today.getTime() - offset)).toISOString().split('T')[0];
+  // 1. Calculate Absolute Local Today (YYYY-MM-DD)
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const localToday = `${year}-${month}-${day}`;
   
-  checkInInput.setAttribute('min', localISOTime);
-  checkOutInput.setAttribute('min', localISOTime);
+  // 2. Lock Check-in floor and disable Check-out by default
+  checkInInput.setAttribute('min', localToday);
+  checkOutInput.disabled = true;
+  checkOutInput.classList.add('opacity-50', 'cursor-not-allowed', 'bg-slate-50');
 
   dateInputs.forEach(input => {
     input.addEventListener('change', (e) => {
@@ -147,16 +151,25 @@
         input.classList.remove('text-slate-900');
       }
 
-      // 2. Dynamic Validation: Check-out cannot be before Check-in
+      // 3. The Linear Flow Gatekeeper
       if (target === checkInInput) {
-        // Lock the check-out minimum date to the selected check-in date
-        checkOutInput.setAttribute('min', checkInInput.value);
-        
-        // If they already picked a checkout date that is now invalid, wipe it
-        if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
+        if (checkInInput.value) {
+          // User picked Check-in: Unlock Check-out and set its floor
+          checkOutInput.disabled = false;
+          checkOutInput.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-slate-50');
+          checkOutInput.setAttribute('min', checkInInput.value);
+          
+          // Safety wipe ONLY if they edit check-in after picking an earlier check-out
+          if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
+            checkOutInput.value = '';
+            checkOutInput.classList.add('text-slate-500');
+            checkOutInput.classList.remove('text-slate-900');
+          }
+        } else {
+          // User cleared Check-in: Re-lock Check-out
+          checkOutInput.disabled = true;
+          checkOutInput.classList.add('opacity-50', 'cursor-not-allowed', 'bg-slate-50');
           checkOutInput.value = '';
-          checkOutInput.classList.add('text-slate-500');
-          checkOutInput.classList.remove('text-slate-900');
         }
       }
     });
@@ -174,13 +187,11 @@
     const checkInRaw = checkInInput.value;
     const checkOutRaw = checkOutInput.value;
     
-    // Safety fallback
     if (!loc || !type) {
       alert("Please ensure you have selected a Location and an Event Type.");
       return;
     }
     
-    // Helper function to format dates from YYYY-MM-DD to DD-MM-YYYY
     const formatDate = (dateStr) => {
       if (!dateStr) return '';
       const parts = dateStr.split('-');
@@ -190,31 +201,29 @@
     const checkInFormatted = formatDate(checkInRaw);
     const checkOutFormatted = formatDate(checkOutRaw);
     
-    // Construct the strict WhatsApp format template
     const message = `Hi TravAmigo,\nI am ${name}. \nMy contact is: ${phone}\n\nI am looking for a farmhouse. Details are below: \nLocation: ${loc} \nEvent type: ${type}. \nCheck-in Date: ${checkInFormatted}. \nCheck-out Date: ${checkOutFormatted}\n\nPlease send me the available options.`;
     
-    // encodeURIComponent converts the literal \n into %0A for the URL
     const whatsappUrl = `https://wa.me/919891116444?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
     
-    // Reset standard inputs
+    // Reset Everything
     (document.getElementById('farmhouseForm') as HTMLFormElement).reset();
     
-    // Reset custom dropdowns back to their original placeholders
     dropdownWrappers.forEach(wrapper => {
       const text = wrapper.querySelector('.dropdown-text');
       const hiddenInput = wrapper.querySelector('input[type="hidden"]');
-      
       text.textContent = text.getAttribute('data-placeholder');
       text.classList.add('text-slate-500');
       text.classList.remove('text-slate-900');
       if (hiddenInput) (hiddenInput as HTMLInputElement).value = "";
     });
 
-    // Reset date attributes and placeholder colors
-    checkInInput.setAttribute('min', localISOTime);
-    checkOutInput.setAttribute('min', localISOTime);
+    checkInInput.setAttribute('min', localToday);
+    checkOutInput.disabled = true;
+    checkOutInput.classList.add('opacity-50', 'cursor-not-allowed', 'bg-slate-50');
+    checkOutInput.removeAttribute('min');
+    
     dateInputs.forEach(input => {
       input.classList.add('text-slate-500');
       input.classList.remove('text-slate-900');
