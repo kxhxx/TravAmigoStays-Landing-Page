@@ -121,17 +121,43 @@
     }
   });
 
-  // --- NATIVE DATE INPUT STYLING LOGIC ---
-  const dateInputs = [document.getElementById('checkInDate'), document.getElementById('checkOutDate')];
+  // --- NATIVE DATE INPUT STYLING & VALIDATION LOGIC ---
+  const checkInInput = document.getElementById('checkInDate') as HTMLInputElement;
+  const checkOutInput = document.getElementById('checkOutDate') as HTMLInputElement;
+  const dateInputs = [checkInInput, checkOutInput];
   
+  // 1. Prevent past dates: Get today's date in local YYYY-MM-DD format
+  const today = new Date();
+  const offset = today.getTimezoneOffset() * 60000;
+  const localISOTime = (new Date(today.getTime() - offset)).toISOString().split('T')[0];
+  
+  checkInInput.setAttribute('min', localISOTime);
+  checkOutInput.setAttribute('min', localISOTime);
+
   dateInputs.forEach(input => {
     input.addEventListener('change', (e) => {
-      if ((e.target as HTMLInputElement).value) {
+      const target = e.target as HTMLInputElement;
+      
+      // Handle Text Styling
+      if (target.value) {
         input.classList.remove('text-slate-500');
         input.classList.add('text-slate-900');
       } else {
         input.classList.add('text-slate-500');
         input.classList.remove('text-slate-900');
+      }
+
+      // 2. Dynamic Validation: Check-out cannot be before Check-in
+      if (target === checkInInput) {
+        // Lock the check-out minimum date to the selected check-in date
+        checkOutInput.setAttribute('min', checkInInput.value);
+        
+        // If they already picked a checkout date that is now invalid, wipe it
+        if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
+          checkOutInput.value = '';
+          checkOutInput.classList.add('text-slate-500');
+          checkOutInput.classList.remove('text-slate-900');
+        }
       }
     });
   });
@@ -145,8 +171,8 @@
     const loc = (document.getElementById('location') as HTMLInputElement).value;
     const type = (document.getElementById('eventType') as HTMLInputElement).value;
     
-    const checkInRaw = (document.getElementById('checkInDate') as HTMLInputElement).value;
-    const checkOutRaw = (document.getElementById('checkOutDate') as HTMLInputElement).value;
+    const checkInRaw = checkInInput.value;
+    const checkOutRaw = checkOutInput.value;
     
     // Safety fallback
     if (!loc || !type) {
@@ -186,7 +212,9 @@
       if (hiddenInput) (hiddenInput as HTMLInputElement).value = "";
     });
 
-    // Reset date placeholder colors
+    // Reset date attributes and placeholder colors
+    checkInInput.setAttribute('min', localISOTime);
+    checkOutInput.setAttribute('min', localISOTime);
     dateInputs.forEach(input => {
       input.classList.add('text-slate-500');
       input.classList.remove('text-slate-900');
