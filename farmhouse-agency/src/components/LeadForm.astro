@@ -155,30 +155,26 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full">
+          <div class="min-w-0">
             <label class="block text-sm font-medium mb-1">Check-in Date *</label
             >
             <input
               type="date"
               id="checkInDate"
-              placeholder="Select Check-in Date"
               required
-              class="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow bg-white text-slate-500"
+              class="w-full p-3 text-sm sm:text-base rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow bg-white text-slate-900 box-border"
             />
           </div>
-          <div>
+          <div class="min-w-0">
             <label class="block text-sm font-medium mb-1"
               >Check-out Date *</label
             >
             <input
-              type="text"
-              onfocus="(this.type='date')"
-              onblur="(this.type=this.value?'date':'text')"
+              type="date"
               id="checkOutDate"
-              placeholder="Select Check-out Date"
               required
-              class="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow bg-white text-slate-500"
+              class="w-full p-3 text-sm sm:text-base rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow bg-white text-slate-900 box-border"
             />
           </div>
         </div>
@@ -221,7 +217,8 @@
     options.forEach((option) => {
       option.addEventListener("click", (e) => {
         const selectedValue = (e.target as HTMLElement).getAttribute(
-          "data-value") as string;
+          "data-value",
+        ) as string;
         (hiddenInput as HTMLInputElement).value = selectedValue;
         text.textContent = selectedValue;
         text.classList.remove("text-slate-500");
