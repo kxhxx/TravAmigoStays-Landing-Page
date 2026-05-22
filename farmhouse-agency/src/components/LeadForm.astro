@@ -1,0 +1,195 @@
+<section id="inquiry" class="py-20 bg-purple-900 text-white">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="bg-white p-8 sm:p-10 rounded-3xl text-slate-900 shadow-2xl">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Inquire For Your Event</h2>
+      
+      <form id="farmhouseForm" class="space-y-5">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium mb-1">Your Name *</label>
+            <input type="text" id="name" placeholder="Enter Your Name" required class="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow placeholder-slate-500 text-slate-900" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">WhatsApp Number *</label>
+            <input type="tel" id="phone" placeholder="Enter Your Number" required class="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow placeholder-slate-500 text-slate-900" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          
+          <div>
+            <label class="block text-sm font-medium mb-1">Preferred Location *</label>
+            <div class="relative custom-dropdown-wrapper z-20">
+              <input type="hidden" id="location" required>
+              <button type="button" class="dropdown-button w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none bg-white text-left flex justify-between items-center transition-shadow">
+                <span class="dropdown-text text-slate-500" data-placeholder="Select a Location">Select a Location</span>
+                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="dropdown-menu absolute left-0 w-full mt-2 bg-white rounded-xl shadow-xl border border-slate-100 hidden z-50 overflow-hidden opacity-0 transition-opacity duration-200">
+                <div class="max-h-60 overflow-y-auto py-2">
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Gurgaon">Gurgaon</div>
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Chhatarpur">Chhatarpur</div>            
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Manesar">Manesar</div>
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Noida">Noida</div>
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Greater Noida">Greater Noida</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Event Type *</label>
+            <div class="relative custom-dropdown-wrapper z-10">
+              <input type="hidden" id="eventType" required>
+              <button type="button" class="dropdown-button w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none bg-white text-left flex justify-between items-center transition-shadow">
+                <span class="dropdown-text text-slate-500" data-placeholder="Select Event Type">Select Event Type</span>
+                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="dropdown-menu absolute left-0 w-full mt-2 bg-white rounded-xl shadow-xl border border-slate-100 hidden z-50 overflow-hidden opacity-0 transition-opacity duration-200">
+                <div class="max-h-60 overflow-y-auto py-2">
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Wedding / Pre-Wedding">Wedding / Pre-Wedding</div>
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Corporate Offsite">Corporate Offsite</div>
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Private Party">Private Party</div>
+                  <div class="dropdown-option px-4 py-3 hover:bg-purple-50 hover:text-purple-700 cursor-pointer text-slate-700 transition-colors font-medium" data-value="Shoot / Production">Shoot / Production</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium mb-1">Check-in Date *</label>
+            <input type="date" id="checkInDate" required class="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow bg-white text-slate-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Check-out Date *</label>
+            <input type="date" id="checkOutDate" required class="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 outline-none transition-shadow bg-white text-slate-500" />
+          </div>
+        </div>
+        
+        <button type="submit" class="w-full bg-purple-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-purple-700 transition-colors mt-4 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+          Get Curated List on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  // --- UNIFIED CUSTOM DROPDOWN LOGIC ---
+  const dropdownWrappers = document.querySelectorAll('.custom-dropdown-wrapper');
+
+  dropdownWrappers.forEach(wrapper => {
+    const btn = wrapper.querySelector('.dropdown-button');
+    const menu = wrapper.querySelector('.dropdown-menu');
+    const text = wrapper.querySelector('.dropdown-text');
+    const hiddenInput = wrapper.querySelector('input[type="hidden"]');
+    const options = wrapper.querySelectorAll('.dropdown-option');
+
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.dropdown-menu').forEach(m => {
+        if (m !== menu && !m.classList.contains('hidden')) {
+          m.classList.add('opacity-0');
+          setTimeout(() => m.classList.add('hidden'), 200);
+        }
+      });
+      menu.classList.toggle('hidden');
+      setTimeout(() => menu.classList.toggle('opacity-0'), 10);
+    });
+
+    options.forEach(option => {
+      option.addEventListener('click', (e) => {
+        const selectedValue = (e.target as HTMLElement).getAttribute('data-value');
+        (hiddenInput as HTMLInputElement).value = selectedValue;
+        text.textContent = selectedValue;
+        text.classList.remove('text-slate-500');
+        text.classList.add('text-slate-900');
+        menu.classList.add('opacity-0');
+        setTimeout(() => menu.classList.add('hidden'), 200);
+      });
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.custom-dropdown-wrapper')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.add('opacity-0');
+        setTimeout(() => menu.classList.add('hidden'), 200);
+      });
+    }
+  });
+
+  // --- NATIVE DATE INPUT STYLING LOGIC ---
+  const dateInputs = [document.getElementById('checkInDate'), document.getElementById('checkOutDate')];
+  
+  dateInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      if ((e.target as HTMLInputElement).value) {
+        input.classList.remove('text-slate-500');
+        input.classList.add('text-slate-900');
+      } else {
+        input.classList.add('text-slate-500');
+        input.classList.remove('text-slate-900');
+      }
+    });
+  });
+
+  // --- WHATSAPP SUBMIT LOGIC ---
+  document.getElementById('farmhouseForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const phone = (document.getElementById('phone') as HTMLInputElement).value;
+    const loc = (document.getElementById('location') as HTMLInputElement).value;
+    const type = (document.getElementById('eventType') as HTMLInputElement).value;
+    
+    const checkInRaw = (document.getElementById('checkInDate') as HTMLInputElement).value;
+    const checkOutRaw = (document.getElementById('checkOutDate') as HTMLInputElement).value;
+    
+    // Safety fallback
+    if (!loc || !type) {
+      alert("Please ensure you have selected a Location and an Event Type.");
+      return;
+    }
+    
+    // Helper function to format dates from YYYY-MM-DD to DD-MM-YYYY
+    const formatDate = (dateStr) => {
+      if (!dateStr) return '';
+      const parts = dateStr.split('-');
+      return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    };
+
+    const checkInFormatted = formatDate(checkInRaw);
+    const checkOutFormatted = formatDate(checkOutRaw);
+    
+    // Construct the strict WhatsApp format template
+    const message = `Hi TravAmigo,\nI am ${name}. \nMy contact is: ${phone}\n\nI am looking for a farmhouse. Details are below: \nLocation: ${loc} \nEvent type: ${type}. \nCheck-in Date: ${checkInFormatted}. \nCheck-out Date: ${checkOutFormatted}\n\nPlease send me the available options.`;
+    
+    // encodeURIComponent converts the literal \n into %0A for the URL
+    const whatsappUrl = `https://wa.me/919891116444?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset standard inputs
+    (document.getElementById('farmhouseForm') as HTMLFormElement).reset();
+    
+    // Reset custom dropdowns back to their original placeholders
+    dropdownWrappers.forEach(wrapper => {
+      const text = wrapper.querySelector('.dropdown-text');
+      const hiddenInput = wrapper.querySelector('input[type="hidden"]');
+      
+      text.textContent = text.getAttribute('data-placeholder');
+      text.classList.add('text-slate-500');
+      text.classList.remove('text-slate-900');
+      if (hiddenInput) (hiddenInput as HTMLInputElement).value = "";
+    });
+
+    // Reset date placeholder colors
+    dateInputs.forEach(input => {
+      input.classList.add('text-slate-500');
+      input.classList.remove('text-slate-900');
+    });
+  });
+</script>

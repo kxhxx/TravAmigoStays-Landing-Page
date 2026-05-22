@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "TravelAgency",
+				"name": "Your Agency Name",
+				"areaServed": ["Gurgaon", "Delhi", "Noida", "Chhatarpur", "Manesar"],
+				"telephone": "+91-9891116444"
+			}
+		</script>
+	</head>
+	<!-- flex, flex-col, and min-h-screen are critical for the footer anchor -->
+	<body class="bg-slate-50 text-slate-900 font-sans flex flex-col min-h-screen">
+		
+		<Navbar />
+		
+		<!-- flex-grow pushes everything below it (the footer) to the absolute bottom -->
+		<div class="flex-grow">
+			<slot />
+		</div>
+		
+		<Footer />
+		
+	</body>
+</html>
