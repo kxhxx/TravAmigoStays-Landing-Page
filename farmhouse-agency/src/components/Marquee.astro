@@ -1,0 +1,26 @@
+---
+// src/components/Marquee.astro
+---
+<div class="relative w-full bg-purple-900 border-y border-purple-800 text-white overflow-hidden py-4 sm:py-6 flex items-center shadow-inner">
+  
+  <div class="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-purple-900 to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-purple-900 to-transparent z-10 pointer-events-none"></div>
+
+  <div class="flex whitespace-nowrap w-fit">
+    <div class="animate-marquee flex gap-12 sm:gap-24 px-6 sm:px-12 items-center text-sm sm:text-lg font-semibold tracking-widest uppercase">
+      <span>★ Premium Farmhouses</span>
+      <span>★ Corporate Offsites</span>
+      <span>★ Luxury Pool Villas</span>
+      <span>★ Delhi NCR</span>
+      <span>★ Private Events</span>
+    </div>
+    
+    <div class="animate-marquee flex gap-12 sm:gap-24 px-6 sm:px-12 items-center text-sm sm:text-lg font-semibold tracking-widest uppercase" aria-hidden="true">
+      <span>★ Premium Farmhouses</span>
+      <span>★ Corporate Offsites</span>
+      <span>★ Luxury Pool Villas</span>
+      <span>★ Delhi NCR</span>
+      <span>★ Private Events</span>
+    </div>
+  </div>
+</div>
