@@ -5,6 +5,7 @@ import ServicesGrid from '../components/ServicesGrid.astro';
 import LocationGrid from '../components/LocationGrid.astro';
 import LeadForm from '../components/LeadForm.astro';
 import BookingWidget from '../components/BookingWidget.astro';
+import EventTypes from '../components/EventTypes.astro';
 ---
 
 <Layout 
@@ -15,7 +16,8 @@ import BookingWidget from '../components/BookingWidget.astro';
     <BookingWidget />
     <ServicesGrid />
     <LocationGrid />
-    <section class="py-0 pb-12 text-center px-4 bg-slate-50">
+    <EventTypes />
+    <section class="py-12 pb-12 text-center px-4 bg-slate-50">
        <h2 class="text-3xl font-bold mb-4">How It Works</h2>
        <div class="flex flex-wrap justify-center gap-8 mt-8">
          <div class="max-w-xs"><strong>1. Share Details</strong><p>Tell us your event specifications</p></div>
