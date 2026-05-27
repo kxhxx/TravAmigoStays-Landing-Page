@@ -334,9 +334,11 @@
 
     const checkInFormatted = formatDate(checkInRaw);
     const checkOutFormatted = formatDate(checkOutRaw);
+    const widgetGuests =
+      (document.getElementById("widgetGuests") as HTMLInputElement)?.value ||
+      "Not specified";
 
-    const message = `Hi TravAmigo,\nI am ${name}. \nMy contact is: ${phone}\n\nI am looking for a farmhouse. Details are below: \nLocation: ${loc} \nEvent type: ${type}. \nCheck-in Date: ${checkInFormatted}. \nCheck-out Date: ${checkOutFormatted}\n\nPlease send me the available options.`;
-
+    const message = `Hi TravAmigo,\nI am ${name}. \nMy contact is: ${phone}\n\nI am looking for a farmhouse. Details are below: \nLocation: ${loc} \nEvent type: ${type}. \nGuests: ${widgetGuests} \nCheck-in Date: ${checkInFormatted}. \nCheck-out Date: ${checkOutFormatted}\n\nPlease send me the available options.`;
     const whatsappUrl = `https://wa.me/919891116444?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank");

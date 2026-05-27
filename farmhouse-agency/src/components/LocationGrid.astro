@@ -1,22 +1,138 @@
 ---
-const locations = [
-  { name: 'Gurgaon', desc: 'Modern party pads with pools and sunset views' },
-  { name: 'Chhatarpur', desc: 'Luxury wedding estates and palatial farmhouses' },
-  { name: 'Manesar', desc: 'Expansive green lawns perfect for corporate offsites' },
-  { name: 'Noida & Greater Noida', desc: 'Exclusive stays and quiet getaways' }
-];
+// src/components/LocationGrid.astro
 ---
-<section class="py-16 md:py-20 px-4 bg-white">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-10 md:mb-12 text-center tracking-tight">Top Locations We Serve</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-      {locations.map(loc => (
-        <a href="#inquiry" class="block p-6 border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300 bg-slate-50 flex flex-col justify-center text-center sm:text-left group hover:-translate-y-1">
-          <h3 class="text-xl font-bold mb-3 text-purple-700 group-hover:text-purple-900 transition-colors">{loc.name}</h3>
-          <p class="text-slate-600 leading-relaxed text-sm sm:text-base">{loc.desc}</p>
-        </a>
-      ))}
+
+<section
+  class="pt-4 pb-4 sm:pt-12 sm:pb-8 bg-slate-50 border-t border-slate-200"
+>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+        Our Prime Locations
+      </h2>
+      <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+        Curated estates across the most sought-after destinations in Delhi NCR.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
+      <div
+        class="group relative rounded-3xl overflow-hidden shadow-lg border border-purple-100 bg-white w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+      >
+        <div class="w-full h-72 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+            alt="Gurgaon Farmhouses"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-purple-900 via-purple-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+        >
+        </div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 class="text-2xl font-bold text-white mb-1">Gurgaon</h3>
+          <p class="text-purple-100 text-sm font-medium tracking-wide">
+            Corporate & Luxury Retreats
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="group relative rounded-3xl overflow-hidden shadow-lg border border-purple-100 bg-white w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+      >
+        <div class="w-full h-72 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80"
+            alt="Chhatarpur Farmhouses"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-purple-900 via-purple-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+        >
+        </div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 class="text-2xl font-bold text-white mb-1">Chhatarpur</h3>
+          <p class="text-purple-100 text-sm font-medium tracking-wide">
+            Premium Wedding Estates
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="group relative rounded-3xl overflow-hidden shadow-lg border border-purple-100 bg-white w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+      >
+        <div class="w-full h-72 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80"
+            alt="Manesar Farmhouses"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-purple-900 via-purple-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+        >
+        </div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 class="text-2xl font-bold text-white mb-1">Manesar</h3>
+          <p class="text-purple-100 text-sm font-medium tracking-wide">
+            Spacious Resort Villas
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="group relative rounded-3xl overflow-hidden shadow-lg border border-purple-100 bg-white w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+      >
+        <div class="w-full h-72 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"
+            alt="Noida Farmhouses"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-purple-900 via-purple-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+        >
+        </div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 class="text-2xl font-bold text-white mb-1">Noida</h3>
+          <p class="text-purple-100 text-sm font-medium tracking-wide">
+            Modern Pool Parties
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="group relative rounded-3xl overflow-hidden shadow-lg border border-purple-100 bg-white w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+      >
+        <div class="w-full h-72 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=800&q=80"
+            alt="Greater Noida Farmhouses"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-purple-900 via-purple-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+        >
+        </div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 class="text-2xl font-bold text-white mb-1">Greater Noida</h3>
+          <p class="text-purple-100 text-sm font-medium tracking-wide">
+            Large Gathering Spaces
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-slate-50 pt-12 pb-4 text-center px-4">
+      <a
+        href="#inquiry"
+        class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+      >
+        Inquire Now
+      </a>
     </div>
   </div>
 </section>
