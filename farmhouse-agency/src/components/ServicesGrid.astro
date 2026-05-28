@@ -1,4 +1,8 @@
-<!-- <section class="py-24 pb-1 bg-white">
+---
+// src/components/ServicesGrid.astro
+---
+
+<section class="pt-10 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2
@@ -12,248 +16,221 @@
       </p>
     </div>
 
-    <div
-      class="grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-4 max-w-4xl mx-auto mb-12"
-    >
-      <div class="flex flex-col items-center text-center">
-        <svg
-          class="w-10 h-10 text-purple-600 mb-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M3 13c3.6 0 3.6-2 7.2-2s3.6 2 7.2 2 3.6-2 7.2-2 3.6 2 7.2 2"
-          ></path>
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M3 17c3.6 0 3.6-2 7.2-2s3.6 2 7.2 2 3.6-2 7.2-2 3.6 2 7.2 2"
-          ></path>
-        </svg>
-        <h3 class="text-sm font-semibold text-slate-800">Private Pool</h3>
-      </div>
-
-      <div class="flex flex-col items-center text-center">
-        <svg
-          class="w-10 h-10 text-purple-600 mb-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zm-9 9h18"></path>
-        </svg>
-        <h3 class="text-sm font-semibold text-slate-800">Premium Catering</h3>
-      </div>
-
-      <div class="flex flex-col items-center text-center">
-        <svg
-          class="w-10 h-10 text-purple-600 mb-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-          ></path>
-        </svg>
-        <h3 class="text-sm font-semibold text-slate-800">Customized Decor</h3>
-      </div>
-
-      <div class="flex flex-col items-center text-center">
-        <svg
-          class="w-10 h-10 text-purple-600 mb-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M3 4h18M5 4l7 10M19 4l-7 10M12 14v6M8 20h8"></path>
-        </svg>
-        <h3 class="text-sm font-semibold text-slate-800">Bar Setup</h3>
-      </div>
-
-      <div class="flex flex-col items-center text-center">
-        <svg
-          class="w-10 h-10 text-purple-600 mb-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
-          ></path>
-        </svg>
-        <h3 class="text-sm font-semibold text-slate-800">DJ & Audio</h3>
-      </div>
-
-      <div class="flex flex-col items-center text-center">
-        <svg
-          class="w-10 h-10 text-purple-600 mb-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M3 21h18M4 17l4-4 4 4 6-6 4 6M12 9a3 3 0 100-6 3 3 0 000 6z"
-          ></path>
-        </svg>
-        <h3 class="text-sm font-semibold text-slate-800">Expansive Lawn</h3>
-      </div>
-    </div>
-
-    <div class="text-center my-12 pb-8">
-      <a
-        href="#inquiry"
-        class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-        >Inquire Now</a
-      >
-    </div>
-  </div>
-</section> -->
-
-
-
-
-
----
-// src/components/ServicesGrid.astro
----
-<section class="pt-16 pb-0 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl md:text-4xl font-light text-slate-900 mb-4 tracking-tight">
-        Curated <span class="font-bold">Experiences</span>
-      </h2>
-      <p class="text-lg text-slate-500">
-        Beyond just a property. From private chefs to premium bar setups, we
-        provide the elite amenities required for a flawless event.
-      </p>
-    </div>
-
     <div class="relative w-full py-8 mb-12 flex items-center overflow-hidden">
-      <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+      <div
+        class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"
+      >
+      </div>
 
       <div class="flex whitespace-nowrap w-fit">
-        
-        <div class="animate-marquee flex gap-12 sm:gap-24 px-6 sm:px-12 items-center">
-          
+        <div
+          class="animate-marquee flex gap-12 sm:gap-24 px-6 sm:px-12 items-center"
+        >
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13c3.6 0 3.6-2 7.2-2s3.6 2 7.2 2 3.6-2 7.2-2 3.6 2 7.2 2"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 17c3.6 0 3.6-2 7.2-2s3.6 2 7.2 2 3.6-2 7.2-2 3.6 2 7.2 2"></path>
-            </svg>
+           <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 14 V8 a2 2 0 0 1 2 -2 M15 14 V8 a2 2 0 0 1 2 -2 M7 10h8 M7 13h8"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 16 c 2.5 0, 2.5 2, 5 2 s 2.5 -2, 5 -2 s 2.5 2, 5 2 s 2.5 -2, 5 -2"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 20 c 2.5 0, 2.5 2, 5 2 s 2.5 -2, 5 -2 s 2.5 2, 5 2 s 2.5 -2, 5 -2"></path>
+</svg>
             <h3 class="text-sm font-semibold text-slate-800">Private Pool</h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zm-9 9h18"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zm-9 9h18"></path>
             </svg>
-            <h3 class="text-sm font-semibold text-slate-800">Premium Catering</h3>
+            <h3 class="text-sm font-semibold text-slate-800">
+              Premium Catering
+            </h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              ></path>
             </svg>
-            <h3 class="text-sm font-semibold text-slate-800">Customized Decor</h3>
+            <h3 class="text-sm font-semibold text-slate-800">
+              Customized Decor
+            </h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4h18M5 4l7 10M19 4l-7 10M12 14v6M8 20h8"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M3 4h18M5 4l7 10M19 4l-7 10M12 14v6M8 20h8"></path>
             </svg>
             <h3 class="text-sm font-semibold text-slate-800">Bar Setup</h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+              ></path>
             </svg>
             <h3 class="text-sm font-semibold text-slate-800">DJ & Audio</h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M4 17l4-4 4 4 6-6 4 6M12 9a3 3 0 100-6 3 3 0 000 6z"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4 21 Q4 15 2 10 Q6 16 6 21 M8 21 Q8 12 6 6 Q10 13 10 21 M12 21 Q13 10 16 4 Q14 11 14 21 M16 21 Q16 14 20 9 Q18 15 18 21 M20 21 Q20 16 23 13 Q21 17 22 21 M2 21 h20"
+              ></path>
             </svg>
             <h3 class="text-sm font-semibold text-slate-800">Expansive Lawn</h3>
           </div>
-          
         </div>
-        
-        <div class="animate-marquee flex gap-12 sm:gap-24 px-6 sm:px-12 items-center" aria-hidden="true">
-          
+
+        <div
+          class="animate-marquee flex gap-12 sm:gap-24 px-6 sm:px-12 items-center"
+          aria-hidden="true"
+        >
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13c3.6 0 3.6-2 7.2-2s3.6 2 7.2 2 3.6-2 7.2-2 3.6 2 7.2 2"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 17c3.6 0 3.6-2 7.2-2s3.6 2 7.2 2 3.6-2 7.2-2 3.6 2 7.2 2"></path>
-            </svg>
+           <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 14 V8 a2 2 0 0 1 2 -2 M15 14 V8 a2 2 0 0 1 2 -2 M7 10h8 M7 13h8"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 16 c 2.5 0, 2.5 2, 5 2 s 2.5 -2, 5 -2 s 2.5 2, 5 2 s 2.5 -2, 5 -2"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 20 c 2.5 0, 2.5 2, 5 2 s 2.5 -2, 5 -2 s 2.5 2, 5 2 s 2.5 -2, 5 -2"></path>
+</svg>
             <h3 class="text-sm font-semibold text-slate-800">Private Pool</h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zm-9 9h18"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zm-9 9h18"></path>
             </svg>
-            <h3 class="text-sm font-semibold text-slate-800">Premium Catering</h3>
+            <h3 class="text-sm font-semibold text-slate-800">
+              Premium Catering
+            </h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              ></path>
             </svg>
-            <h3 class="text-sm font-semibold text-slate-800">Customized Decor</h3>
+            <h3 class="text-sm font-semibold text-slate-800">
+              Customized Decor
+            </h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4h18M5 4l7 10M19 4l-7 10M12 14v6M8 20h8"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M3 4h18M5 4l7 10M19 4l-7 10M12 14v6M8 20h8"></path>
             </svg>
             <h3 class="text-sm font-semibold text-slate-800">Bar Setup</h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+              ></path>
             </svg>
             <h3 class="text-sm font-semibold text-slate-800">DJ & Audio</h3>
           </div>
-          
+
           <div class="flex flex-col items-center text-center w-32 shrink-0">
-            <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M4 17l4-4 4 4 6-6 4 6M12 9a3 3 0 100-6 3 3 0 000 6z"></path>
+            <svg
+              class="w-10 h-10 text-purple-600 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4 21 Q4 15 2 10 Q6 16 6 21 M8 21 Q8 12 6 6 Q10 13 10 21 M12 21 Q13 10 16 4 Q14 11 14 21 M16 21 Q16 14 20 9 Q18 15 18 21 M20 21 Q20 16 23 13 Q21 17 22 21 M2 21 h20"
+              ></path>
             </svg>
             <h3 class="text-sm font-semibold text-slate-800">Expansive Lawn</h3>
           </div>
-          
         </div>
       </div>
     </div>
 
-    <div class="text-center mt-4 mb-12 pb-8">
+    <div class="text-center mt-4 mb-6 pb-8">
       <a
         href="#inquiry"
         class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"

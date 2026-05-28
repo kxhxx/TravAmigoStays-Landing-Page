@@ -13,11 +13,8 @@ import EventTypes from '../components/EventTypes.astro';
   description="Book the best private farmhouses in Chhatarpur, Gurgaon, and Manesar. Handpicked venues for weddings and corporate events. Get a list on WhatsApp.">
   <main>
     <Hero />
-    <BookingWidget />
-    <ServicesGrid />
-    <LocationGrid />
-    <EventTypes />
-    <section class="py-12 pb-12 text-center px-4 bg-slate-50">
+    <!-- <BookingWidget /> -->
+     <section class="py-12 pb-12 text-center px-4 bg-slate-50">
        <h2 class="text-3xl font-bold mb-4">How It Works</h2>
        <div class="flex flex-wrap justify-center gap-8 mt-8">
          <div class="max-w-xs"><strong>1. Share Details</strong><p>Tell us your event specifications</p></div>
@@ -25,6 +22,10 @@ import EventTypes from '../components/EventTypes.astro';
          <div class="max-w-xs"><strong>3. Visit & Book</strong><p>Lock your dates with a site visit</p></div>
        </div>
     </section>
-    <LeadForm />
+        <LeadForm />
+  
+    <LocationGrid />
+      <ServicesGrid />
+    <EventTypes />
   </main>
 </Layout>
